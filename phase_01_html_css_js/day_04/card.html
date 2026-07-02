@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="card.css">
+</head>
+<body>
+    <div id = "container">
+        <img src="https://newslivetv.com/wp-content/uploads/2023/06/31-years-of-Shah-Rukh-Khan-A-look-at-his-must-watch-romantic-films.png" alt="">
+        <h2>King Khan</h2>
+        <div id="btn">
+            <button id="like">👍</button>
+            <h3> like : <span id="lc">0</span></h3>
+        </div>
+        <div id="btn">
+        <button id="dislike">👎</button>
+        <h3> Dislike:<span id="dc">0</span> </h3>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var likebtn=document.querySelector("#like")
+    var dislikebtn=document.querySelector("#dislike")
+    var count=0;
+    likebtn.addEventListener("click", function(){
+    
+    
+        // alert("button")
+        
+        count++;
+        var a1=document.querySelector("#lc")
+        a1.innerText=count
+        a1.style.color="green"
+    })
+    dislikebtn.addEventListener("click", function(){
+        count++;
+        var a2=document.querySelector("#dc")
+        a2.innerText=count
+        a2.style.color="red"
+    })
+
+    
+</script>

@@ -1,0 +1,31 @@
+#container{
+    /* border: 2px solid black; */
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    width : 500px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding :20px;
+}
+img{
+    width: 500px;
+    border-radius: 5%;
+    
+}
+#btn{
+    display: flex;
+    
+    gap: 20px;
+
+}
+button{
+    font-size: xx-large;
+    
+}
+button:hover{
+    cursor: pointer;
+    background-color: azure;
+}
