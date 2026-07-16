@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 100%;
+            height: 700px;
+            border: 1px solid black;
+        }
+        #movie{
+            border: 1px solid red;
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Slide page</h1>
+    <div id="container">
+        <img id="movie" src="" alt="Movie Poster">
+    </div>
+</body>
+</html>
+<script>
+    let posters=[
+        "https://cdn.moviefone.com/image-assets/83533/bRBeSHfGHwkEpImlhxPmOcUsaeg.jpg?d=360x540&q=80",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtmtNnw69gRbHATrhuCm405HIGZIjOL6Flk0TT3pqTlGOkHVOI9DvMY5ZS&s=10",
+        "https://filmfare.wwmindia.com/content/2024/oct/joker11727849847.jpg"
+    ]
+    let image=document.getElementById("movie");
+    image.src=posters[0];
+    let index=0
+    setInterval(()=>{
+        index++;
+        image.src=posters[index%posters.length]
+    },2000)
+</script>
