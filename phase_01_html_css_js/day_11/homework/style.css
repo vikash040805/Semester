@@ -21,7 +21,12 @@ input{
 button{
     padding: 8px 15px;
     cursor: pointer;
+    color:white;
+    background-color: blue;
+    align-self: center;
+    
 }
+
 
 .profile-card{
     width: 300px;

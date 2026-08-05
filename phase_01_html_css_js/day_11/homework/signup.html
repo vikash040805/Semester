@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Sign Up</h2>
+
+    <form id="signupForm" onsubmit="handleSubmit(event)">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+
+    
+
+</body>
+</html>
+<script>
+
+    let handleSubmit=(event)=>{
+        event.preventDefault() // to stop auto refreshing of browser after submitting
+
+        let name=document.getElementById("name")
+        let email=document.getElementById("email")
+        let password=document.getElementById("password")
+
+        let user={
+            name:name.value,
+            email:email.value,
+            pass:password.value
+        }
+        console.log("user",user)
+    }
+    localStorage.setItem("user",JSON.stringify(user)) // to store data in local storage
+    
+</script>
