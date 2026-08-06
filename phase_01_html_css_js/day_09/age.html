@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <input type="number" id="userAge" placeholder="Age">
+    <button onclick="submitBtn()">Submit</button>
+    <p id="userName"></p>
+
+    
+</body>
+</html>
+<script>
+    const  submitBtn = document.querySelector('button');
+    submitBtn.addEventListener('click', function() {
+        const userAge =document.getElementById('userAge').value;
+        if(userAge >= 18) {
+            document.getElementById('userName').innerText = "You are eligible to vote.";
+            document.getElementById('userName').style.color = "green";
+            document.getElementById('userName').style.backgroundColor = "lightgreen";
+        } else {
+            document.getElementById('userName').innerText = "You are not eligible to vote.";
+            document.getElementById('userName').style.color = "red";
+            document.getElementById('userName').style.backgroundColor = "lightcoral";
+        }
+    });
+
+    </script>

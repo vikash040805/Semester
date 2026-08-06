@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Marks Calculator</h1>
+    <input type="number" id="marks" placeholder="Enter your marks">
+    <button onclick="handleClick()">Calculate</button>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+        function handleClick(){
+            const marks = document.getElementById('marks').value;
+            const result=document.getElementById('result');
+            if(marks>=90){
+                result.innerHTML="A+: !Outstanding"
+                result.style.color="black"
+            }else if(marks>=75){
+                result.innerHTML="A: !Good"
+                result.style.color="blue"
+        }else if(marks>=60){
+            result.innerHTML="B : !Not Bad"
+            result.style.color="violet"
+        }else if(marks>=40){
+            result.innerHTML="C  : !Great you pass"
+            result.style.color="green"
+        }else{
+            result.innerHTML="Fail : !Ohh NO you Fail"
+            result.style.color="red"
+        }
+    }
+</script>

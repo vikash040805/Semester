@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login System</title>
+</head>
+<body>
+    <h1>Login System</h1>
+    <label for="name">Name: </lable>
+    <input type="text" id="name" placeholder="Enter Your Username">
+    <label for="pass">Password: </label>
+    <input type="text" id="pass" placeholder="Enter your Password">
+    <button onclick="handleClick()">Submit</button>
+    <p id="para"></p>
+</body>
+</html>
+<script>
+    function handleClick(){
+        const name=document.getElementById("name").value;
+        const password=document.getElementById("pass").value;
+        const para=document.getElementById("para")
+        if(name=="admin" && password=="12345"){
+            para.innerHTML="Login Successful"
+        }else{
+            para.innerHTML="Unsuccessful"
+        }
+    }
+</script>

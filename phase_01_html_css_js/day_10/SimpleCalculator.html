@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Simple Calculator</h1>
+        <input type="number" id="first" placeholder="enter your number">
+        <input type="number" id="second" placeholder="enter your number">
+        <button onclick="Add()">Add</button>
+        <button onclick="sub()">Subtract</button>
+        <button onclick="multi()">Multiply</button>
+        <button onclick="divide()">Divide</button>
+        <button onclick="clr()">Clear</button>
+        <p id="result"></p>
+    </div>
+</body>
+</html>
+<script>
+
+    function Add(){
+        const first=document.getElementById("first").value;
+        const second=document.getElementById("second").value;
+        let res=Number(first)+Number(second)
+        result.innerHTML=res;
+    }
+    function sub(){
+        const first=document.getElementById("first").value;
+        const second=document.getElementById("second").value;
+        let res=Number(first)-Number(second)
+        result.innerHTML=res;
+    }
+    function multi(){
+        const first=document.getElementById("first").value;
+        const second=document.getElementById("second").value;
+        let res=Number(first)*Number(second)
+        result.innerHTML=res;
+    }
+    function divide(){
+        const first=document.getElementById("first").value;
+        const second=document.getElementById("second").value;
+        let res=Number(first)/Number(second)
+        result.innerHTML=res;
+    }
+    function clr(){
+       first.value=""
+       second.value=""
+       result.innerHTML=""
+    }
+</script>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save and Load using Local Storage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        button {
+            margin-right: 10px;
+        }
+        #saveButton{
+            background-color: #e21a1a;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #loadButton{
+            background-color: #2da774;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #clearButton{
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor:pointer;
+            padding : 10px 20px;
+            border-radius: 10px;
+        }
+        </style>
+</head>
+<body>
+    <h1>Notes</h1>
+    <textarea id="textArea" rows="10" cols="30"></textarea><br>
+    <button id="saveButton">Save</button>
+    <button id="loadButton">Load</button>
+    <button id="clearButton">Clear</button>
+
+    <script>
+        const textArea = document.getElementById('textArea');
+        const saveButton = document.getElementById('saveButton');
+        const loadButton = document.getElementById('loadButton');
+        const clearButton= document.getElementById('clearButton');
+
+        saveButton.addEventListener('click', () => {
+            const text = textArea.value;
+            if (!text) {
+                alert('Please enter some text to save.');
+                return;
+            }
+            localStorage.setItem('savedText', text);
+            alert('Text saved!');
+        });
+
+        loadButton.addEventListener('click', () => {
+            const savedText = localStorage.getItem('savedText');
+            if (savedText) {
+                textArea.value = savedText;
+            } else {
+                alert('No saved text found.');
+            }
+        });
+        clearButton.addEventListener('click', ()=>{
+            localStorage.removeItem('savedText');
+            textArea.value=''
+            savedText.value='';
+        })
+    </script>
+</body>
+</html>
