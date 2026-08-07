@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage and DOM Manipulation</title>
+    <style>
+        body{
+            font-family:Arial, sans-serif;
+            text-align:center;
+            padding: 50px;
+            transition: background-color 0.3s;
+        }
+        .container{
+            max-width: 500px;
+            margin: auto;
+            padding : 30 px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        input{
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button{
+            padding: 10px 20px;
+            margin: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #saveBtn{
+            background-color:#007bff;
+            color: white;
+        }
+        #resetBtn{
+            background-color: #dc3545;
+            color: white;
+        }
+        #greeting{
+            margin-top: 25px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       <input type="text" id="nameInput" placeholder="Enter your name">
+       <input type="text" id="colorInput" placeholder="Enter background color">
+       <br>
+       <button id="saveBtn">Save Preferences</button> 
+       <button id="resetBtn">Reset</button>
+       <div id="greeting">Welcome! </div>
+    </div>
+</body>
+</html>
+<script>
+    const nameInput=document.getElementById("nameInput");
+    const colorInput=document.getElementById("colorInput");
+    const saveInput=document.getElementById("saveBtn")
+    const resetBtn=document.getElementById("resetBtn")
+    const greeting=document.getElementById("greeting");
+
+    saveBtn.addEventListener("click",function(){
+        const name=nameInput.value.trim();
+        const color=colorInput.value.trim();
+        if(name===""){
+            alert("Please enter your name!")
+            return
+        }
+        if(color===""){
+            alert("please enter a background color!");
+            return;
+        }
+        localStorage.setItem("userName",name);
+        localStorage.setItem("backgroundColor",color);
+
+        greeting.textContent=`Welcome, ${name}!`;
+
+        document.body.style.backgroundColor=color;
+    })
+    window.addEventListener("load",function(){
+        const savedName=localStorage.getItem("userName")
+        const savedColor=localStorage.getItem("backgroundColor")
+
+        if(savedName && savedColor){
+            greeting.textContent=`Welcome, ${savedName}!`;
+
+            document.body.style.backgroudnColor=savedColor;
+            nameInput.value=savedName;
+            colorInput.value=savedColor;
+        }
+    })
+
+        resetBtn.addEventListener("click",function(){
+            localStorage.removeItem("userName")
+            localStorage.removeItem("backgroundColor")
+            nameInput.value=""
+            colorInput.value=""
+            greeting.textContent="Welcome!"
+            document.body.style.backgroundColor="white"
+        })
+</script>
