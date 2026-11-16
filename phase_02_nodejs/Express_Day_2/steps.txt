@@ -1,0 +1,6 @@
+1. create server file
+2. Install neccesary dependencies i.e express, nodomon
+3. Add scripts inside package.json and
+4. add "start": nodemon server.js
+5. now in console type npm run start
+
