@@ -1,0 +1,22 @@
+import React from 'react'
+
+const Navbar = () => {
+  return (
+    <div style={{
+        border:"1px solid black",
+        display: "flex",
+        justifyContent:"end",
+        gap:"20px",
+        padding:"10px"
+    }}>
+        <p>Home</p>
+        <p>products</p>
+        <p>cart</p>
+        <p>profile</p>
+    </div>
+
+
+  )
+}
+
+export default Navbar
